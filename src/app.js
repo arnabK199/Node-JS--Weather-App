@@ -6,6 +6,7 @@ const getCode = require('./utils/getCode');
 const getForecast = require('./utils/getForecast');
 
 const app = express()
+const port = process.env.PORT || 3000;
 
 // Define path for express config
 const publicDirectory = path.join(__dirname, '../public');
@@ -120,6 +121,6 @@ app.get('*', (req,res)=>{
 // app.com/help
 // app.com/about
 
-app.listen(3001,()=>{
-    console.log('Server Started')
+app.listen(port,()=>{
+    console.log('Server Started on Port: '+ port)
 })
