@@ -15,7 +15,7 @@ const getForecast = (location, callback) => {
         }else if(data.errorCode){
             callback(data.message, undefined)
         }else{
-            callback(undefined, `Today's temp is ${data.locations[location].currentConditions.temp} Degree Fahreinheit. There are ${data.locations[location].currentConditions.precip}% chances of rain. Today is ${data.locations[location].currentConditions.icon}`)
+            callback(undefined, `Today's temp is ${data.locations[location].currentConditions.temp} Degree Fahreinheit. There are ${data.locations[location].currentConditions.precip}% chances of rain. Today is ${data.locations[location].currentConditions.icon}. Current Humidity is ${data.locations[location].currentConditions.humidity} %. Heat-Index: ${data.locations[location].currentConditions.heatindex}`)
         }
     })
 }
